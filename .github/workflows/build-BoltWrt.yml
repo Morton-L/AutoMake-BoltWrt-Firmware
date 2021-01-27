@@ -5,11 +5,11 @@
 # See /LICENSE for more information.
 #
 # https://github.com/Morton-L/AutoMake-OpenWrt-Firmware-Template
-# File: .github/workflows/build-openwrt.yml
-# Description: Build OpenWrt using GitHub Actions
+# File: .github/workflows/build-BoltWrt.yml
+# Description: Build BoltWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: Build BoltWrt
 
 on:
   repository_dispatch:
@@ -123,7 +123,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: BoltWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: boltwrt/bin
 
     - name: Organize files
@@ -139,7 +139,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: BoltWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
