@@ -26,6 +26,7 @@ env:
   Project_Branch: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
+  Preload_File: preload
   custom_script_1: add-custom-script-1.sh
   custom_script_2: add-custom-script-2.sh
   UPLOAD_BIN_DIR: false
@@ -39,7 +40,7 @@ env:
 jobs:
   build:
     #指定服务器系统
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     #动作
     steps:
@@ -87,6 +88,12 @@ jobs:
         chmod +x $custom_script_2
         cd boltwrt
         $GITHUB_WORKSPACE/$custom_script_2
+
+    - name: Load Preload File
+      run: |
+        [ -e $Preload_File ] && mv $Preload_File boltwrt/dl
+        cd boltwrt
+        chmod -Rf 777 dl
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
