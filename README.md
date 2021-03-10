@@ -4,9 +4,9 @@
 ![GitHub Stars](https://img.shields.io/github/stars/Morton-L/AutoMake-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/Morton-L/AutoMake-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
 
-Build OpenWrt using GitHub Actions
+Build BoltWrt using GitHub Actions
 
-使用GitHub Actions编译OpenWrt固件 
+使用GitHub Actions编译BoltWrt固件 
 
 [Read the details in my blog (in Chinese) | 中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
@@ -14,10 +14,10 @@ Build OpenWrt using GitHub Actions
 
 ### Usage
 
-- Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
+- Click the [Use this template](https://github.com/Morton-L/AutoMake-OpenWrt-Firmware-Template/generate) button to create a new repository.
 - Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
 - Push `.config` file to the GitHub repository.
-- Select `Build OpenWrt` on the Actions page.
+- Select `Build BoltWrt` on the Actions page.
 - Click the `Run workflow` button.
 - When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
 
@@ -33,7 +33,7 @@ Build OpenWrt using GitHub Actions
 - 点击 [Use this template](https://github.com/Morton-L/AutoMake-OpenWrt-Firmware-Template/generate) 按钮以创建新的 repository.
 - Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
 - 将 `.config` 文件推送到 repository.
-- 在Actions页面中选择 `Build OpenWrt` .
+- 在Actions页面中选择 `Build BoltWrt` .
 - 点击 `Run workflow` 按钮.
 - 编译完成后, 点击位于Actions页面右上角的 `Artifacts` 按钮以下载编译好的固件包.
 
