@@ -44,9 +44,7 @@ Build BoltWrt using GitHub Actions
 
 ## Acknowledgments
 
-- [Microsoft Azure](https://azure.microsoft.com)
 - [GitHub Actions](https://github.com/features/actions)
-- [OpenWrt](https://github.com/openwrt/openwrt)
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
 - [tmate](https://github.com/tmate-io/tmate)
 - [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate)
