@@ -9,14 +9,14 @@
 # Description: Build BoltWrt using GitHub Actions
 #
 
-name: 使用Ubuntu-20.04编译BoltWrt
+name: 使用Ubuntu-20.04编译BoltWrt[cn]
 
 on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
       ssh:
-        description: 'SSH connection to Actions'
+        description: '交叉编译前通过 SSH 连接至 Actions ?'
         required: false
         default: 'false'
 
@@ -62,10 +62,10 @@ jobs:
         chmod -Rf 777 boltwrt
         ln -sf /workdir/boltwrt $GITHUB_WORKSPACE/boltwrt
 
-    - name: Update feeds
+    - name: 更新 feeds
       run: cd boltwrt && ./scripts/feeds update -a
 
-    - name: Install feeds
+    - name: 安装 feeds
       run: cd boltwrt && chmod -Rf 777 feeds && ./scripts/feeds install -a
 
     - name: 加载自定义配置
@@ -86,7 +86,7 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-    - name: Download package
+    - name: 下载组件和依赖的源码
       id: package
       run: |
         cd boltwrt
@@ -95,7 +95,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: 编译固件
+    - name: 交叉编译固件
       id: compile
       run: |
         cd boltwrt
