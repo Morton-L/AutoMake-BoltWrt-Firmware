@@ -9,7 +9,7 @@
 # Description: Build BoltWrt using GitHub Actions
 #
 
-name: 使用Ubuntu-20.04编译BoltWrt[cn]
+name: 使用Ubuntu-20.04编译BoltWrt2[cn]
 
 on:
   repository_dispatch:
